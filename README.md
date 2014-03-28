@@ -7,6 +7,10 @@ add 127.0.0.1 skwarepon to end
 
 mkdir ~/vhosts/skwarepon
 
+cd ~/Dropbox
+
+ln -s ~/vhosts/skwarepon
+
 chmod 711 ~/vhosts/skwarepon
 
 cd ~/vhosts/skwarepon
