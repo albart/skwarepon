@@ -32,7 +32,7 @@
 <select name="datelist" form="register">
     <?php
         for($i=1; $i<32; $i++)
-            print("<option value=?>?</option>",$i,$i);
+            print("<option value=$i>$i</option>",$i,$i);
     ?>
 </select>
 <div>
