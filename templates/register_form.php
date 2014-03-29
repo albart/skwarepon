@@ -19,7 +19,7 @@
         </div>
         <div class="form-group">
             Report History: <input autofocus class="form-control" name="reporthist" type="radio" value="Y"/>Yes
-            Report History: <input autofocus class="form-control" name="reporthist" type="radio" value="N"/>No
+            <input autofocus class="form-control" name="reporthist" type="radio" value="N"/>No
         </div>
         <div class="form-group">
             <input autofocus class="form-control" name="reportday" placeholder="Report Day" type="dropdown 1-31"/>
@@ -32,7 +32,7 @@
 <select name="datelist" form="register">
     <?php
         for($i=1; $i<32; $i++)
-            printf("option value=?>?</option>",$i,$i);
+            printf("<option value=?>?</option>",$i,$i);
     ?>
 </select>
 <div>
