@@ -1,4 +1,4 @@
-<form action="register_client.php" method="post" id="register">
+<form action="register_client.php" method="post">
     <fieldset>
         <div class="form-group">
             <input autofocus class="form-control" name="namelast" placeholder="Last Name" type="text"/>
@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
             Report Day
-            <select name="datelist" form="register">
+            <select name="datelist">
                 <?php
                     for($i=1; $i<32; $i++)
                         print("<option value=$i>$i</option>");
