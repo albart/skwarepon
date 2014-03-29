@@ -9,6 +9,9 @@
             <input autofocus class="form-control" name="zipcode" placeholder="Zip Code" type="text" maxlength="8" size="8"/>
         </div>
         <div class="form-group">
+            <input autofocus class="form-control" name="username" placeholder="User Name" type="text"/>
+        </div>
+       <div class="form-group">
             <input autofocus class="form-control" name="email" placeholder="Email" type="text"/>
         </div>
         <div class="form-group">
