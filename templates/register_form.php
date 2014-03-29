@@ -1,4 +1,4 @@
-<form action="register.php" method="post">
+<form action="register.php" method="post" id="register">
     <fieldset>
         <div class="form-group">
             <input autofocus class="form-control" name="namelast" placeholder="Last Name" type="text"/>
@@ -18,7 +18,8 @@
             <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password"/>
         </div>
         <div class="form-group">
-            <input autofocus class="form-control" name="reporthist" placeholder="Historical Report" type="checkbox"/>
+            Report History: <input autofocus class="form-control" name="reporthist" type="radio" value="Y"/>Yes
+            Report History: <input autofocus class="form-control" name="reporthist" type="radio" value="N"/>No
         </div>
         <div class="form-group">
             <input autofocus class="form-control" name="reportday" placeholder="Report Day" type="dropdown 1-31"/>
@@ -28,6 +29,12 @@
         </div>
     </fieldset>
 </form>
+<select name="datelist" form="register">
+    <?php
+        for($i=1; $i<32; $i++)
+            printf(option value="?">?</option>,$i,$i);
+    ?>
+</select>
 <div>
     or <a href="login.php">log in</a>
 </div>
