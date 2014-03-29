@@ -22,19 +22,19 @@
             <input autofocus class="form-control" name="reporthist" type="radio" value="N"/>No
         </div>
         <div class="form-group">
-            <input autofocus class="form-control" name="reportday" placeholder="Report Day" type="dropdown 1-31"/>
+            Report Day
+            <select name="datelist" form="register">
+                <?php
+                    for($i=1; $i<32; $i++)
+                        print("<option value=$i>$i</option>");
+                ?>
+            </select>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-default">Register</button>
         </div>
     </fieldset>
 </form>
-<select name="datelist" form="register">
-    <?php
-        for($i=1; $i<32; $i++)
-            print("<option value=$i>$i</option>");
-    ?>
-</select>
 <div>
     or <a href="login.php">log in</a>
 </div>
