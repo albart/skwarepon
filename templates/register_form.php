@@ -1,4 +1,4 @@
-<form action="register.php" method="post" id="register">
+<form action="register_client.php" method="post" id="register">
     <fieldset>
         <div class="form-group">
             <input autofocus class="form-control" name="namelast" placeholder="Last Name" type="text"/>
