@@ -15,7 +15,7 @@ chmod 711 ~/vhosts/skwarepon
 
 cd ~/vhosts/skwarepon
 
-git config --global user.email "albart@sbcglobal.net"
+git config --global user.email "albart-at-sbcglobal.net"
 
 git init
 
