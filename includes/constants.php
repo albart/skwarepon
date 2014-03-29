@@ -3,14 +3,13 @@
     /**
      * constants.php
      *
-     * Computer Science 50
-     * Problem Set 7
+     * Skwarepon
      *
      * Global constants.
      */
 
     // your database's name
-    define("DATABASE", "pset7");
+    define("DATABASE", "skwarepon");
 
     // your database's password
     define("PASSWORD", "crimson");
