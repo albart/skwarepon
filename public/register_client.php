@@ -7,13 +7,13 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         if (empty($_POST["namelast"]))
-            apologize("You must provide a last name.")
+            apologize("You must provide a last name.");
         else if (empty($_POST["namefirst"]))
-            apologize("You must provide a first name.")
+            apologize("You must provide a first name.");
         else if (empty($_POST["namemi"]))
-            apologize("You must provide a middle initial.")
+            apologize("You must provide a middle initial.");
         else if (empty($_POST["zipcode"]))
-            apologize("You must provide a zip code.")
+            apologize("You must provide a zip code.");
         else if (empty($_POST["username"]))
             apologize("You must provide a username.");
         else if (empty($_POST["email"]))
