@@ -12,6 +12,8 @@
             apologize("You must provide a first name.");
         else if (empty($_POST["namemi"]))
             apologize("You must provide a middle initial.");
+        else if (empty($_POST["phone"]))
+            apologize("You must provide a phone number.");
         else if (empty($_POST["zipcode"]))
             apologize("You must provide a zip code.");
         else if (empty($_POST["username"]))
