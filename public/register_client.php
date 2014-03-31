@@ -30,7 +30,7 @@
             apologize("You must select a date to receive reports.");
         else
         {
-            $return = query("INSERT INTO users (namelast, namefirst, namemi, phone, zipcode, username, email, password, reporthist, datelist)
+            $return = query("INSERT INTO clients (namelast, namefirst, namemi, phone, zipcode, username, email, password, reporthist, datelist)
                             VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
                             , $_POST["namelast"], $_POST["namefirst"], $_POST["namemi"], $_POST["phone"], $_POST["zipcode"], $_POST["username"], $_POST["email"], crypt($_POST["password"]), $_POST["reporthist"], $_POST["datelist"]);
             if ($return === false)
