@@ -30,7 +30,8 @@
             apologize("You must select a date to receive reports.");
         else
         {
-            $return = query("INSERT INTO users (username, hash, cash) VALUES(?, ?, 10000.00)", $_POST["username"], crypt($_POST["password"]));
+            $return = query("INSERT INTO users (namelast, namefirst, namemi, phone, zipcode, username, email, password, reporthist, datelist)
+                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $_POST["namelast"], $_POST["namefirst"], $_POST["namemi"], $_POST["phone"], $_POST["zipcode"], $_POST["username"], $_POST["email"], crypt($_POST["password"]), $_POST["reporthist"], $_POST["datelist"]);
             if ($return === false)
                 apologize("Insert query failed with return of " . $return);
             $rows = query("SELECT LAST_INSERT_ID() AS id");
