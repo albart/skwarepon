@@ -28,7 +28,7 @@
         namefirst varchar(40),
         namemi char(1),
         phone int,
-        zipcode int, 
+        zipcode varchar(255), 
         username varchar(255),
         email varchar(255),
         password varchar(255),
