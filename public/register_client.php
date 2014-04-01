@@ -20,10 +20,16 @@
             apologize("You must provide 10 numbers for your phone number");
         else if (empty($_POST["zipcode"]))
             apologize("You must provide a zip code.");
+        else
+            $zipcode = preg_replace ("/\D/", "", $_POST["zip"]);
+        if (strlen($zipcode) !== 5)
+            apologize("Your zip code must be 5 digits");
         else if (empty($_POST["username"]))
             apologize("You must provide a username.");
         else if (empty($_POST["email"]))
             apologize("You must provide an email address.");
+        else if ((filter_var($_POST["email"])) === FALSE)
+            apologize("Your email is invalid.")
         else if (empty($_POST["password"]))
             apologize("You must provide a password.");
         else if ($_POST["password"] !== $_POST["confirmation"])
@@ -36,7 +42,7 @@
         {
             $return = query("INSERT INTO clients (namelast, namefirst, namemi, phone, zipcode, username, email, password, reporthist, datelist)
                             VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-                            , $_POST["namelast"], $_POST["namefirst"], $_POST["namemi"], $_POST["phone"], $_POST["zipcode"], $_POST["username"], $_POST["email"], crypt($_POST["password"]), $_POST["reporthist"], $_POST["datelist"]);
+                            , $_POST["namelast"], $_POST["namefirst"], $_POST["namemi"], $phone, $zipcode, $_POST["username"], $_POST["email"], crypt($_POST["password"]), $_POST["reporthist"], $_POST["datelist"]);
             if ($return === false)
                 apologize("Insert query failed with return of " . $return);
             mail($_POST["email"], "registration", "Registration was successful with Skwarepon");
