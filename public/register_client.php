@@ -35,6 +35,7 @@
                             , $_POST["namelast"], $_POST["namefirst"], $_POST["namemi"], $_POST["phone"], $_POST["zipcode"], $_POST["username"], $_POST["email"], crypt($_POST["password"]), $_POST["reporthist"], $_POST["datelist"]);
             if ($return === false)
                 apologize("Insert query failed with return of " . $return);
+            mail($_POST["email"], "registration", "Registration was successful with Skwarepon");
             $rows = query("SELECT LAST_INSERT_ID() AS id");
             // remember that user's now logged in by storing user's ID in session
             $_SESSION["id"] = $rows[0]["id"];
