@@ -10,10 +10,14 @@
             apologize("You must provide a last name.");
         else if (empty($_POST["namefirst"]))
             apologize("You must provide a first name.");
-        else if (empty($_POST["namemi"]))
-            apologize("You must provide a middle initial.");
+        else if (strlen($_POST["namemi"])!==1)
+            apologize("Middle initial must be exactly 1 character");
         else if (empty($_POST["phone"]))
             apologize("You must provide a phone number.");
+        else
+            $phone = preg_replace ("/\D/", "", $_POST["phone"]);
+        if (strlen($phone) !== 10)
+            apologize("You must provide 10 numbers for your phone number");
         else if (empty($_POST["zipcode"]))
             apologize("You must provide a zip code.");
         else if (empty($_POST["username"]))
