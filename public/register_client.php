@@ -18,6 +18,10 @@
             $phone = preg_replace ("/\D/", "", $_POST["phone"]);
         if (strlen($phone) !== 10)
             apologize("You must provide 10 numbers for your phone number");
+        else
+            $mobilephone = preg_replace ("/\D/", "", $_POST["mobilephone"]);
+        if (strlen($mobilephone) !== 10)
+            apologize("You must provide 10 numbers for your mobile phone number");
         else if (empty($_POST["zipcode"]))
             apologize("You must provide a zip code.");
         else
