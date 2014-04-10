@@ -33,7 +33,7 @@
         else if (empty($_POST["email"]))
             apologize("You must provide an email address.");
         else if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) === FALSE)
-            apologize("Your email is invalid.")
+            apologize("Your email is invalid.");
         else if (empty($_POST["password"]))
             apologize("You must provide a password.");
         else if ($_POST["password"] !== $_POST["confirmation"])
