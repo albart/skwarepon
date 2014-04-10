@@ -5,6 +5,14 @@ sudo gedit /etc/hosts
 
 add 127.0.0.1 skwarepon to end
 
+sudo gedit /etc/httpd/conf.d/appliance50.conf
+
+add to end:
+Listen 8080
+<VirtualHost *:8080>
+    VirtualDocumentRoot /home/jharvard/vhosts/skwarepon/public
+</VirtualHost>
+
 mkdir ~/vhosts/skwarepon
 
 cd ~/Dropbox
