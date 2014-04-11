@@ -43,7 +43,7 @@ git commit -m "message"
 
 git push origin master
 
-sudo gedit /etc/sysconfig/network-scripts/ifcfg-eth
+sudo gedit /etc/sysconfig/network-scripts/ifcfg-eth2
 change no to yes
 
 Player -> Manage -> Virtual Machine Settings -> Network Adapter 3 -> Configure Adapters
