@@ -15,7 +15,7 @@
     define("PASSWORD", "crimson");
 
     // your database's server
-    define("SERVER", "localhost");
+    define("SERVER", "skwarepon.dyndns.org");
 
     // your database's username
     define("USERNAME", "jharvard");
