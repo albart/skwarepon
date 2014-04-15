@@ -42,3 +42,6 @@ git add *
 git commit -m "message"
 
 git push origin master
+
+sudo gedit /etc/sysconfig/network-scripts/ifcfg-eth2
+change no to yes
