@@ -31,11 +31,11 @@ git remote add origin https://github.com/albart/skwarepon.git
 
 git pull origin master
 
-chmod 600 *.php -R
+find /home/jharvard/vhosts/skwarepon/ | xargs chmod 644
 
-chmod 644 *.non-php -R
+find /home/jharvard/vhosts/skwarepon/ -name *.php -type f | xargs chmod 600
 
-chmod 711 directory -R
+find /home/jharvard/vhosts/skwarepon/ -type d | xargs chmod 711
 
 git add *
 
