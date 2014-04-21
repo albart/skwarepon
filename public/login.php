@@ -17,7 +17,10 @@
         }
 
         // query database for user
-        $rows = query("SELECT * FROM users WHERE username = ?", $_POST["username"]);
+        if($_POST["type"] == "Customer")
+            $rows = query("SELECT * FROM customers WHERE username = ?", $_POST["username"]);
+        else if($_POST["type"] == "Client")
+            $rows = query("SELECT * FROM clients WHERE username = ?", $_POST["username"]);
 
         // if we found user, check password
         if (count($rows) == 1)
@@ -26,13 +29,16 @@
             $row = $rows[0];
 
             // compare hash of user's input against hash that's in database
-            if (crypt($_POST["password"], $row["hash"]) == $row["hash"])
+            if (crypt($_POST["password"], $row["password"]) == $row["password"])
             {
                 // remember that user's now logged in by storing user's ID in session
                 $_SESSION["id"] = $row["id"];
 
                 // redirect to portfolio
-                redirect("/");
+                if($_POST["type"] == "Customer")
+                   redirect("customer.php");
+                else if($_POST["type"] == "Client")
+                    redirect("client.php");
             }
         }
 

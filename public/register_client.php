@@ -2,6 +2,7 @@
 
     // configuration
     require("../includes/config.php");
+    require_once("PHPMailer/class.phpmailer.php");
 
     // if form was submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -25,7 +26,7 @@
         else if (empty($_POST["zipcode"]))
             apologize("You must provide a zip code.");
         else
-            $zipcode = preg_replace ("/\D/", "", $_POST["zip"]);
+            $zipcode = preg_replace ("/\D/", "", $_POST["zipcode"]);
         if (strlen($zipcode) !== 5)
             apologize("Your zip code must be 5 digits");
         else if (empty($_POST["username"]))
@@ -45,18 +46,43 @@
         else
         {
             $return = query("INSERT INTO clients (namelast, namefirst, namemi, phone, zipcode, username, email, password, reporthist, datelist)
-                            VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-                            , $_POST["namelast"], $_POST["namefirst"], $_POST["namemi"], $phone, $zipcode, $_POST["username"], $_POST["email"], crypt($_POST["password"]), $_POST["reporthist"], $_POST["datelist"]);
+                            VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                            $_POST["namelast"], $_POST["namefirst"], $_POST["namemi"], $_POST["phone"], $_POST["zipcode"], $_POST["username"],
+                            $_POST["email"], crypt($_POST["password"]), $_POST["reporthist"], $_POST["datelist"]);
             if ($return === false)
-                apologize("Insert query failed with return of " . $return);
+                apologize("Insert query failed with query of " . $return);
+            /*    
+            // instantiate mailer
+            $mail = new PHPMailer();
+
+            // use your ISP's SMTP server (e.g., smtp.fas.harvard.edu if on campus or smtp.comcast.net if off campus and your ISP is Comcast)
+            $mail->IsSMTP();
+            $mail->Host = "smtp.fas.harvard.edu";
+
+            // set From:
+            $mail->SetFrom("jharvard@harvard.edu");
+
+            // set To:
+            $mail->AddAddress($_POST["email"]);
+
+            // set Subject:
+            $mail->Subject = "hello, world";
+
+            // set body
+            $mail->Body = "hello, world";
+
+            // send mail
+            if ($mail->Send() === false)
+                die($mail->ErrorInfo . "\n");
+                
             mail($_POST["email"], "registration", "Registration was successful with Skwarepon");
-            mail($_POST["mobilphone"] . "@txt.att.net", "registration", "Registration was successful with Skwarepon");
-            mail($_POST["mobilphone"] . "@vmobl.com", "registration", "Registration was successful with Skwarepon");
+            mail($_POST["mobilephone"] . "@txt.att.net", "registration", "Registration was successful with Skwarepon");
+            mail($_POST["mobilephone"] . "@vmobl.com", "registration", "Registration was successful with Skwarepon");*/
             $rows = query("SELECT LAST_INSERT_ID() AS id");
             // remember that user's now logged in by storing user's ID in session
             $_SESSION["id"] = $rows[0]["id"];
             // redirect to portfolio
-            redirect("/");
+            redirect("client.php");
         }
     }
     else

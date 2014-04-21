@@ -1,8 +1,8 @@
-inquire by zip for customer search
+<?php
 
-show within particular zip everyone who has redeemed a coupon
+    // configuration
+    require("../includes/config.php");
 
-create event w/ master coupons
+    render("client.php", ["title" => "Client"]);
 
-view reports (coupon use per event)
-
+?>

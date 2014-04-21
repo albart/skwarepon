@@ -56,7 +56,7 @@
             // remember that user's now logged in by storing user's ID in session
             $_SESSION["id"] = $rows[0]["id"];
             // redirect to portfolio
-            redirect("/");
+            redirect("customer.php");
         }
     }
     else
