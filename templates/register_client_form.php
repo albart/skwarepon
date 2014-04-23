@@ -2,23 +2,26 @@
     <fieldset>
         <div class="form-group">
             <input autofocus class="form-control" name="namelast" placeholder="Last Name" type="text"/>
-            <input autofocus class="form-control" name="namefirst" placeholder="First Name" type="text"/>
-            <input autofocus class="form-control" name="namemi" placeholder="MI" type="text" maxlength="2" size="2"/>
+            <input class="form-control" name="namefirst" placeholder="First Name" type="text"/>
+            <input class="form-control" name="namemi" placeholder="MI" type="text" maxlength="2" size="2"/>
         </div>
         <div class="form-group">
-            <input autofocus class="form-control" name="phone" placeholder="Phone Number" type="text" />
+            <input class="form-control" name="phone" placeholder="Phone Number" type="text" />
         </div>
         <div class="form-group">
-            <input autofocus class="form-control" name="mobilephone" placeholder="Mobile Phone Number" type="text" />
+            <input class="form-control" name="mobilephone" placeholder="Mobile Phone Number" type="text" />
         </div>
         <div class="form-group">
-            <input autofocus class="form-control" name="zipcode" placeholder="Zip Code" type="text" maxlength="8" size="8"/>
+            <input class="form-control" name="carrier" placeholder="Carrier" type="text" /> <!-- change to dropdown -->
         </div>
         <div class="form-group">
-            <input autofocus class="form-control" name="username" placeholder="User Name" type="text"/>
+            <input class="form-control" name="zipcode" placeholder="Zip Code" type="text" maxlength="8" size="8"/>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="username" placeholder="User Name" type="text"/>
         </div>
        <div class="form-group">
-            <input autofocus class="form-control" name="email" placeholder="Email" type="text"/>
+            <input class="form-control" name="email" placeholder="Email" type="text"/>
         </div>
         <div class="form-group">
             <input class="form-control" name="password" placeholder="Password" type="password"/>
@@ -27,8 +30,8 @@
             <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password"/>
         </div>
         <div class="form-group">
-            Report History: <input autofocus class="form-control" name="reporthist" type="radio" value="Y"/>Yes
-            <input autofocus class="form-control" name="reporthist" type="radio" value="N"/>No
+            Report History: <input class="form-control" name="reporthist" type="radio" value="Y"/>Yes
+            <input class="form-control" name="reporthist" type="radio" value="N"/>No
         </div>
         <div class="form-group">
             Report Day

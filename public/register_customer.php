@@ -22,10 +22,12 @@
             $mobilephone = preg_replace ("/\D/", "", $_POST["mobilephone"]);
         if (strlen($mobilephone) !== 10)
             apologize("You must provide 10 numbers for your mobile phone number");
+        if (empty($_POST["carrier"]))
+            apologize("You must provide a carrier for your mobile phone.");
         else if (empty($_POST["zipcode"]))
             apologize("You must provide a zip code.");
         else
-            $zipcode = preg_replace ("/\D/", "", $_POST["zip"]);
+            $zipcode = preg_replace ("/\D/", "", $_POST["zipcode"]);
         if (strlen($zipcode) !== 5)
             apologize("Your zip code must be 5 digits");
         else if (empty($_POST["username"]))
@@ -38,31 +40,32 @@
             apologize("You must provide a password.");
         else if ($_POST["password"] !== $_POST["confirmation"])
             apologize("Passwords do not match!");
-        else if (empty($_POST["reporthist"]))
+        /*else if (empty($_POST["reporthist"]))
             apologize("You must select whether to receive a report history.");
         else if (empty($_POST["datelist"]))
-            apologize("You must select a date to receive reports.");
+            apologize("You must select a date to receive reports.");*/
         else
         {
-            $return = query("INSERT INTO customers (namelast, namefirst, namemi, phone, zipcode, username, email, password, reporthist, datelist)
+            $return = query("INSERT INTO customers (namelast, namefirst, namemi, phone, mobilephone, carrier, zipcode, username, email, password)
                             VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-                            , $_POST["namelast"], $_POST["namefirst"], $_POST["namemi"], $phone, $zipcode, $_POST["username"], $_POST["email"], crypt($_POST["password"]), $_POST["reporthist"], $_POST["datelist"]);
+                            , $_POST["namelast"], $_POST["namefirst"], $_POST["namemi"], $phone, $mobilephone,
+                            $_POST["carrier"], $zipcode, $_POST["username"], $_POST["email"], crypt($_POST["password"]));
             if ($return === false)
                 apologize("Insert query failed with return of " . $return);
-            mail($_POST["email"], "registration", "Registration was successful with Skwarepon");
+            /*mail($_POST["email"], "registration", "Registration was successful with Skwarepon");
             mail($_POST["mobilphone"] . "@txt.att.net", "registration", "Registration was successful with Skwarepon");
-            mail($_POST["mobilphone"] . "@vmobl.com", "registration", "Registration was successful with Skwarepon");
+            mail($_POST["mobilphone"] . "@vmobl.com", "registration", "Registration was successful with Skwarepon");*/
             $rows = query("SELECT LAST_INSERT_ID() AS id");
             // remember that user's now logged in by storing user's ID in session
             $_SESSION["id"] = $rows[0]["id"];
             // redirect to portfolio
-            redirect("customer.php");
+            redirect("/customer.php");
         }
     }
     else
     {
         // else render form
-        render("register_client_form.php", ["title" => "Register"]);
+        render("/register_customer_form.php", ["title" => "Register"]);
     }
 
 ?>

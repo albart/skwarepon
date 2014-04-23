@@ -4,15 +4,11 @@
 <label>Password :</label>
 <input type="password" name="password"/><br/>
 <input type="submit" name="type" value="Login as"/><br/>
-<input autofocus class="form-control" name="type" type="radio" value="Customer"/>Customer
-<input autofocus class="form-control" name="type" type="radio" value="Client"/>Client
+<input autofocus class="form-control" name="type" type="radio" value="customer"/>Customer
+<input autofocus class="form-control" name="type" type="radio" value="client"/>Client
 </form>
 
 <div>
-  <button>
     <a href = "register_customer.php">Register customer</a>
-  </button>
-  <button>
     <a href = "register_client.php">Register client</a>
-  </button>
 </div>

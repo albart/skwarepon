@@ -8,15 +8,15 @@
     {
         if (empty($_POST["eventID"]))
             apologize("You must provide an event ID");
-        else if (empty($_POST["fromdate"]))
-            apologize("You must provide a fromdate");
-        else if (empty($_POST["todate"]))
-            apologize("You must provide a todate");
+        else if (empty($_POST["validfrom"]))
+            apologize("You must provide a validfrom date.");
+        else if (empty($_POST["validthru"]))
+            apologize("You must provide a validthru date.");
         else
         {
-            $rows = query("INSERT INTO vendormastercoupons (clientID, eventID, shortdesc, longdesc, fromdate, todate, limit, thresholdtext,
+            $rows = query("INSERT INTO vendormastercoupons (clientID, eventID, shortdesc, longdesc, validfrom, validthru, `limit`, thresholdtext,
             thresholdemail) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-            $_SESSION["id"], $_POST["eventID"], $_POST["shortdesc"], $_POST["longdesc"], $_POST["fromdate"], $_POST["todate"], $_POST["limit"],
+            $_SESSION["id"], $_POST["eventID"], $_POST["shortdesc"], $_POST["longdesc"], $_POST["validfrom"], $_POST["validthru"], $_POST["limit"],
             $_POST["thresholdtext"], $_POST["thresholdemail"]);
         }
         redirect("event.php");

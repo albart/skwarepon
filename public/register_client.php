@@ -23,6 +23,8 @@
             $mobilephone = preg_replace ("/\D/", "", $_POST["mobilephone"]);
         if (strlen($mobilephone) !== 10)
             apologize("You must provide 10 numbers for your mobile phone number");
+        if (empty($_POST["carrier"]))
+            apologize("You must provide a carrier for your mobile phone.");
         else if (empty($_POST["zipcode"]))
             apologize("You must provide a zip code.");
         else
@@ -45,10 +47,11 @@
             apologize("You must select a date to receive reports.");
         else
         {
-            $return = query("INSERT INTO clients (namelast, namefirst, namemi, phone, zipcode, username, email, password, reporthist, datelist)
-                            VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                            $_POST["namelast"], $_POST["namefirst"], $_POST["namemi"], $_POST["phone"], $_POST["zipcode"], $_POST["username"],
-                            $_POST["email"], crypt($_POST["password"]), $_POST["reporthist"], $_POST["datelist"]);
+            $return = query("INSERT INTO clients (namelast, namefirst, namemi, phone, mobilephone, carrier,
+                            zipcode, username, email, password, reporthist, datelist)
+                            VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                            $_POST["namelast"], $_POST["namefirst"], $_POST["namemi"], $phone, $mobilephone, $_POST["carrier"], $_POST["zipcode"], 
+                            $_POST["username"], $_POST["email"], crypt($_POST["password"]), $_POST["reporthist"], $_POST["datelist"]);
             if ($return === false)
                 apologize("Insert query failed with query of " . $return);
             /*    

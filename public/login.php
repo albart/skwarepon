@@ -17,9 +17,9 @@
         }
 
         // query database for user
-        if($_POST["type"] == "Customer")
+        if($_POST["type"] == "customer")
             $rows = query("SELECT * FROM customers WHERE username = ?", $_POST["username"]);
-        else if($_POST["type"] == "Client")
+        else if($_POST["type"] == "client")
             $rows = query("SELECT * FROM clients WHERE username = ?", $_POST["username"]);
 
         // if we found user, check password
@@ -35,10 +35,10 @@
                 $_SESSION["id"] = $row["id"];
 
                 // redirect to portfolio
-                if($_POST["type"] == "Customer")
-                   redirect("customer.php");
-                else if($_POST["type"] == "Client")
-                    redirect("client.php");
+                if($_POST["type"] == "customer")
+                   redirect("/customer.php");
+                else if($_POST["type"] == "client")
+                    redirect("/client.php");
             }
         }
 
@@ -48,7 +48,7 @@
     else
     {
         // else render form
-        render("login_form.php", ["title" => "Log In"]);
+        render("/login_form.php", ["title" => "Log In"]);
     }
 
 ?>
