@@ -20,7 +20,7 @@
     // enable sessions
     session_start();
     
-    query("create database if not exists " . DATABASE);
+    /*query("create database if not exists " . DATABASE);
     query("use " . DATABASE);
     query("create table if not exists clients (
         id int(10) auto_increment,
@@ -37,14 +37,14 @@
         primary key (id),
         unique key (username),
         unique key (email)
-        ) engine=InnoDB");
+        ) engine=InnoDB");*/
 
     // require authentication for most pages
     if (!preg_match("{(?:login|logout|register_customer|register_client)\.php$}", $_SERVER["PHP_SELF"]))
     {
         if (empty($_SESSION["id"]))
         {
-            redirect("login.php");
+            redirect("/login.php");
         }
     }
 
