@@ -9,6 +9,7 @@
      */
 
     require_once("constants.php");
+    require_once("PHPMailer/class.phpmailer.php");
 
     /**
      * Apologizes to user with message.
@@ -216,6 +217,28 @@
         {
             trigger_error("Invalid template: $template", E_USER_ERROR);
         }
+    }
+    
+    /**
+     * Sends email.
+     */
+    function emailsp($email, $subject, $body)
+    {
+            $mail = new PHPMailer();
+            $mail->IsSMTP();
+            $mail->SMTPAuth = true;
+            $mail->Host = "outbound.att.net";
+            $mail->Port = 465;
+            $mail->SMTPSecure = 'ssl';
+            $mail->Username   = "albart@sbcglobal.net";
+            $mail->Password   = "rooster80";
+            $mail->SetFrom("albart@sbcglobal.net");
+            $mail->AddAddress($email);
+            $mail->Subject = $subject;
+            $mail->Body = $body;
+            if ($mail->Send() === false)
+                apologize($mail->ErrorInfo . "\n");
+                    redirect("customer_search.php");
     }
 
 ?>

@@ -1,11 +1,11 @@
 <form action="login.php" method="post">
-<label>UserName :</label>
-<input type="text" name="username"/><br />
-<label>Password :</label>
-<input type="password" name="password"/><br/>
-<input type="submit" name="type" value="Login as"/><br/>
-<input autofocus class="form-control" name="type" type="radio" value="customer"/>Customer
-<input autofocus class="form-control" name="type" type="radio" value="client"/>Client
+    <label>UserName :</label>
+    <input autofocus class="form-control" type="text" name="username"/><br />
+    <label>Password :</label>
+    <input type="password" name="password"/><br/>
+    <input type="submit" name="type" value="Login as"/><br/>
+    <input checked class="form-control" name="type" type="radio" value="customer"/>Customer
+    <input class="form-control" name="type" type="radio" value="client"/>Client
 </form>
 
 <div>

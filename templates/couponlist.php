@@ -3,33 +3,27 @@
     <div class="form-group"><table class="table table-striped">
     <thead>
         <tr>
-            <th>shortdesc</th>
-            <th>longdesc</th>
-            <th>validfrom</th>
-            <th>validthru</th>
+            <th>couponID</th>
             <th>select</th>
         </tr>
     </thead>
     <tbody>
     <?php foreach($positions as $position): ?>
         <tr>
-            <td><?= $position["shortdesc"] ?></td>
-            <td><?= $position["longdesc"] ?></td>
-            <td><?= $position["validfrom"] ?></td>
-            <td><?= $position["validthru"] ?></td>
-            <td><input class="form-control" type="radio" name="linenumber"
-                        value=<?= $position["clientID"]."a".$position["eventID"]."a".$position["vendormastercouponID"]."a" ?> /></td>
+            <td><?= $position["couponID"] ?></td>
+            <td><input class="form-control" type="radio" name="couponID" value=<?= $position["couponID"] ?> /></td>
         </tr>
     <? endforeach ?>
     </tbody>
     </table></div>
     <div class="form-group">
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default">Redeem Coupon</button>
     </div>
     </fieldset>
 </form>
 <div>
-    <a href="/customer.php">Home</a>
+    <a href="/couponlist.php">Show Coupons List/Redemption</a>
+</div>
 <div>
     <a href="/logout.php">Log Out</a>
 </div>

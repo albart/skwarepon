@@ -2,7 +2,6 @@
 
     // configuration
     require("../includes/config.php");
-    require_once("PHPMailer/class.phpmailer.php");
 
     // if form was submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST")
@@ -19,6 +18,8 @@
             $phone = preg_replace ("/\D/", "", $_POST["phone"]);
         if (strlen($phone) !== 10)
             apologize("You must provide 10 numbers for your phone number");
+        else if (empty($_POST["mobilephone"]))
+            apologize("You must provide a mobile phone number.");
         else
             $mobilephone = preg_replace ("/\D/", "", $_POST["mobilephone"]);
         if (strlen($mobilephone) !== 10)
@@ -54,44 +55,20 @@
                             $_POST["username"], $_POST["email"], crypt($_POST["password"]), $_POST["reporthist"], $_POST["datelist"]);
             if ($return === false)
                 apologize("Insert query failed with query of " . $return);
-            /*    
-            // instantiate mailer
-            $mail = new PHPMailer();
-
-            // use your ISP's SMTP server (e.g., smtp.fas.harvard.edu if on campus or smtp.comcast.net if off campus and your ISP is Comcast)
-            $mail->IsSMTP();
-            $mail->Host = "smtp.fas.harvard.edu";
-
-            // set From:
-            $mail->SetFrom("jharvard@harvard.edu");
-
-            // set To:
-            $mail->AddAddress($_POST["email"]);
-
-            // set Subject:
-            $mail->Subject = "hello, world";
-
-            // set body
-            $mail->Body = "hello, world";
-
-            // send mail
-            if ($mail->Send() === false)
-                die($mail->ErrorInfo . "\n");
-                
-            mail($_POST["email"], "registration", "Registration was successful with Skwarepon");
-            mail($_POST["mobilephone"] . "@txt.att.net", "registration", "Registration was successful with Skwarepon");
-            mail($_POST["mobilephone"] . "@vmobl.com", "registration", "Registration was successful with Skwarepon");*/
+            emailsp($_POST["email"], "Skwarepon registration", "Registration was successful with Skwarepon.");
+            //emailsp($_POST["mobilephone"] . "@txt.att.net", "Skwarepon registration", "Registration was successful with Skwarepon.");
+            //emailsp($_POST["mobilephone"] . "@vmobl.com", "Skwarepon registration", "Registration was successful with Skwarepon.");
             $rows = query("SELECT LAST_INSERT_ID() AS id");
             // remember that user's now logged in by storing user's ID in session
             $_SESSION["id"] = $rows[0]["id"];
             // redirect to portfolio
-            redirect("client.php");
+            redirect("/client.php");
         }
     }
     else
     {
         // else render form
-        render("register_client_form.php", ["title" => "Register"]);
+        render("/register_client_form.php", ["title" => "Register"]);
     }
 
 ?>

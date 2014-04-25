@@ -52,9 +52,9 @@
                             $_POST["carrier"], $zipcode, $_POST["username"], $_POST["email"], crypt($_POST["password"]));
             if ($return === false)
                 apologize("Insert query failed with return of " . $return);
-            /*mail($_POST["email"], "registration", "Registration was successful with Skwarepon");
-            mail($_POST["mobilphone"] . "@txt.att.net", "registration", "Registration was successful with Skwarepon");
-            mail($_POST["mobilphone"] . "@vmobl.com", "registration", "Registration was successful with Skwarepon");*/
+            emailsp($_POST["email"], "Skwarepon registration", "Registration was successful with Skwarepon.");
+            //emailsp($mobilephone . "@txt.att.net", "Skwarepon registration", "Registration was successful with Skwarepon.");
+            //emailsp($mobilephone . "@vmobl.com", "Skwarepon registration", "Registration was successful with Skwarepon.");
             $rows = query("SELECT LAST_INSERT_ID() AS id");
             // remember that user's now logged in by storing user's ID in session
             $_SESSION["id"] = $rows[0]["id"];
