@@ -49,3 +49,10 @@ change no to yes
 cd ~/vhosts/pset7
 
 mysqldump -u jharvard -p pset7 > pset7.sql
+
+sudo gedit /etc/httpd/conf.d/phpMyAdmin.conf
+
+under <Directory /usr/share/phpMyAdmin/>
+add Require all granted
+
+sudo apachectl restart
