@@ -45,3 +45,7 @@ git push origin master
 
 sudo gedit /etc/sysconfig/network-scripts/ifcfg-eth2
 change no to yes
+
+cd ~/vhosts/pset7
+
+mysqldump -u jharvard -p pset7 > pset7.sql
