@@ -48,7 +48,7 @@ change no to yes
 
 cd ~/vhosts/skwarepon
 
-mysqldump -u jharvard -p pset7 > pset7.sql
+mysqldump -u jharvard -p skwarepon > skwarepon.sql
 
 sudo gedit /etc/httpd/conf.d/phpMyAdmin.conf
 
