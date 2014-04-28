@@ -8,7 +8,7 @@
         query("UPDATE coupons SET redeemed = 1 WHERE couponID = ?", $_POST["couponID"]);
         $rows = query("SELECT customerID FROM coupons WHERE couponID = ?", $_POST["couponID"]);
         $rows = query("SELECT email FROM customers WHERE id = ?", $rows[0]["customerID"]);
-        emailsp($rows[0]["email"], $_POST["couponID"] . " coupon redeemed", $_POST["couponID"] . " coupon redeemed on " . now());
+        emailsp($rows[0]["email"], $_POST["couponID"] . " coupon redeemed", $_POST["couponID"] . " coupon redeemed on " . date("Y-m-d H:i:s"));
     }
     
     $rows = query("SELECT * FROM coupons WHERE clientID = ? AND redeemed = 0 ORDER BY eventID", $_SESSION["id"]);
