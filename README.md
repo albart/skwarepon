@@ -44,6 +44,7 @@ git commit -m "message"
 git push origin master
 
 sudo gedit /etc/sysconfig/network-scripts/ifcfg-eth2
+
 change no to yes
 
 cd ~/vhosts/skwarepon
@@ -53,6 +54,15 @@ mysqldump -u jharvard -p skwarepon > skwarepon.sql
 sudo gedit /etc/httpd/conf.d/phpMyAdmin.conf
 
 under <Directory /usr/share/phpMyAdmin/>
+
 add Require all granted
 
 sudo apachectl restart
+
+sudo gedit /etc/php.ini
+
+change SMTP = localhost 
+to SMTP = outbound.att.net
+
+smtp_port = 25
+to smtp_port = 465
