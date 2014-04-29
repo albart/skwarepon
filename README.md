@@ -66,3 +66,12 @@ to SMTP = outbound.att.net
 
 smtp_port = 25
 to smtp_port = 465
+
+su gedit /etc/my.cnf
+
+add log=/home/jharvard/logs/mysqld/localhost.log
+
+mysqladmin shutdown -u jharvard -p
+
+sudo /usr/bin/mysqld_safe &
+
