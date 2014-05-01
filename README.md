@@ -9,7 +9,7 @@ sudo gedit /etc/httpd/conf.d/appliance50.conf
 
 add to end:
 Listen 8080
-<VirtualHost *:8080>
+"<VirtualHost *:8080>"
     VirtualDocumentRoot /home/jharvard/vhosts/skwarepon/public
 </VirtualHost>
 
