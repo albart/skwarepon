@@ -49,6 +49,8 @@ change ONBOOT=no to ONBOOT=yes
 
 cd ~/vhosts/skwarepon
 
+mysql -u jharvard -p skwarepon < skwarepon.sql
+
 mysqldump -u jharvard -p skwarepon > skwarepon.sql
 
 sudo gedit /etc/httpd/conf.d/phpMyAdmin.conf
