@@ -37,7 +37,7 @@ find /home/jharvard/vhosts/skwarepon/ -name *.php -type f | xargs chmod 600
 
 find /home/jharvard/vhosts/skwarepon/ -type d | xargs chmod 711
 
-git add *
+git add *      //for adding a new file - make sure permission are correct (644)
 
 git commit -m "message"
 
