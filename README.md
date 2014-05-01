@@ -9,7 +9,7 @@ sudo gedit /etc/httpd/conf.d/appliance50.conf
 
 add to end:
 Listen 8080
-"<VirtualHost *:8080>"
+<VirtualHost *:8080>
     VirtualDocumentRoot /home/jharvard/vhosts/skwarepon/public
 </VirtualHost>
 
@@ -45,7 +45,7 @@ git push origin master
 
 sudo gedit /etc/sysconfig/network-scripts/ifcfg-eth2
 
-change no to yes
+change ONBOOT=no to ONBOOT=yes
 
 cd ~/vhosts/skwarepon
 
