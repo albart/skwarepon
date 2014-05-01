@@ -5,12 +5,12 @@
     $mail = new PHPMailer();
     $mail->IsSMTP();
     $mail->SMTPAuth = true;
-    $mail->Host = "smtp.fas.harvard.edu";
+    $mail->Host = "outbound.att.net";
     $mail->Port = 465;
     $mail->SMTPSecure = 'ssl';
-    $mail->Username   = "jharvard";
-    $mail->Password   = "crimson";
-    $mail->SetFrom("jharvard@harvard.edu");
+    $mail->Username   = "albart@sbcglobal.net";
+    $mail->Password   = "rooster80";
+    $mail->SetFrom("albart@sbcglobal.net");
     $mail->AddAddress("albart@sbcglobal.net");
     $mail->Body = ".1";
     if ($mail->Send() === false)

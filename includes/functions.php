@@ -237,8 +237,10 @@
             $mail->Subject = $subject;
             $mail->Body = $body;
             if ($mail->Send() === false)
-                apologize($mail->ErrorInfo . "\n");
-                    redirect("customer_search.php");
+                apologize($mail->ErrorInfo);
+else
+	apologize("6");
+                    /*redirect("customer_search.php");*/
     }
 
 ?>

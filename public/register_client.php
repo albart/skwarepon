@@ -46,13 +46,16 @@
             apologize("You must select whether to receive a report history.");
         else if (empty($_POST["datelist"]))
             apologize("You must select a date to receive reports.");
+        else if ($_FILES["file"]["error"] > 0) 
+            apologize ("Error: " . $_FILES["file"]["error"]);
         else
         {
             $return = query("INSERT INTO clients (namelast, namefirst, namemi, phone, mobilephone, carrier,
-                            zipcode, username, email, password, reporthist, datelist)
-                            VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                            zipcode, username, email, password, reporthist, datelist,picture)
+                            VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, LOAD_FILE(concat('upload/',?)))",
                             $_POST["namelast"], $_POST["namefirst"], $_POST["namemi"], $phone, $mobilephone, $_POST["carrier"], $_POST["zipcode"], 
-                            $_POST["username"], $_POST["email"], crypt($_POST["password"]), $_POST["reporthist"], $_POST["datelist"]);
+                            $_POST["username"], $_POST["email"], crypt($_POST["password"]), $_POST["reporthist"], $_POST["datelist"]/*,
+                            $_FILES["file"]["tmp_name"]*/);
             if ($return === false)
                 apologize("Insert query failed with query of " . $return);
             emailsp($_POST["email"], "Skwarepon registration", "Registration was successful with Skwarepon.");

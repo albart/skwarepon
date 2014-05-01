@@ -1,4 +1,4 @@
-<form action="register_client.php" method="post">
+<form action="register_client.php" method="post" enctype="multipart/form-data">
     <fieldset>
         <div class="form-group">
             <input autofocus class="form-control" name="namelast" placeholder="Last Name" type="text"/>
@@ -41,6 +41,10 @@
                         print("<option value=$i>$i</option>");
                 ?>
             </select>
+        </div>
+        <div class="form-group">
+            <label for="file">Filename:</label>
+            <input class="form-control" name="file" type="file" />
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-default">Register</button>
