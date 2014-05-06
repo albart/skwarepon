@@ -15,7 +15,7 @@ git remote add origin https://github.com/albart/skwarepon.git
 
 sudo gedit /etc/httpd/conf.d/phpMyAdmin.conf &
 
-under <Directory /usr/share/phpMyAdmin/>
+under \<Directory /usr/share/phpMyAdmin/>
 
 add Require all granted
 
