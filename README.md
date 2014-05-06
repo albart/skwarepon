@@ -5,17 +5,11 @@ INITIAL SETUP
 
 mkdir /home/jharvard/vhosts/skwarepon
 
-cd /home/jharvard/Dropbox
-
-ln -s /home/jharvard/vhosts/skwarepon
-
-chmod 711 /home/jharvard/vhosts/skwarepon
-
-cd /home/jharvard/vhosts/skwarepon
+ln -s /home/jharvard/vhosts/skwarepon /home/jharvard/Dropbox/
 
 git config --global user.email "albart-at-sbcglobal.net"
 
-git init
+git init /home/jharvard/vhosts/skwarepon
 
 git remote add origin https://github.com/albart/skwarepon.git
 
