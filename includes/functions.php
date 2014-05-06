@@ -227,20 +227,17 @@
             $mail = new PHPMailer();
             $mail->IsSMTP();
             $mail->SMTPAuth = true;
-            $mail->Host = "outbound.att.net";
+            $mail->Host = "smtp.gmail.com";
             $mail->Port = 465;
             $mail->SMTPSecure = 'ssl';
-            $mail->Username   = "albart@sbcglobal.net";
-            $mail->Password   = "rooster80";
-            $mail->SetFrom("albart@sbcglobal.net");
+            $mail->Username   = "skwarepon@gmail.com";
+            $mail->Password   = "skwarepon1";
+            $mail->SetFrom("skwarepon@gmail.com");
             $mail->AddAddress($email);
             $mail->Subject = $subject;
             $mail->Body = $body;
             if ($mail->Send() === false)
                 apologize($mail->ErrorInfo);
-else
-	apologize("6");
-                    /*redirect("customer_search.php");*/
     }
 
 ?>
