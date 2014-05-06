@@ -1,7 +1,7 @@
 skwarepon
 =========
 
-INITIAL SETUP
+<!--INITIAL SETUP
 
 mkdir /home/jharvard/vhosts/skwarepon
 
@@ -76,3 +76,4 @@ git commit -m "message"
 verify git status has nothing to do
 
 git push origin master
+-->
