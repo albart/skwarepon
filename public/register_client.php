@@ -51,8 +51,8 @@
         else
         {
             $return = query("INSERT INTO clients (namelast, namefirst, namemi, phone, mobilephone, carrier,
-                            zipcode, username, email, password, reporthist, datelist,picture)
-                            VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, LOAD_FILE(concat('upload/',?)))",
+                            zipcode, username, email, password, reporthist, datelist/*,picture*/)
+                            VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?/*, LOAD_FILE(concat('upload/',?))*/)",
                             $_POST["namelast"], $_POST["namefirst"], $_POST["namemi"], $phone, $mobilephone, $_POST["carrier"], $_POST["zipcode"], 
                             $_POST["username"], $_POST["email"], crypt($_POST["password"]), $_POST["reporthist"], $_POST["datelist"]/*,
                             $_FILES["file"]["tmp_name"]*/);
