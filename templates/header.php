@@ -5,7 +5,7 @@
         
     <head>
    	
-		<link href="/css/skwarepon.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="/css/skwarepon.css" media="screen" rel="stylesheet" type="text/css"/>
 <!--		<link href="/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="/css/bootstrap-theme.min.css" rel="stylesheet"/>
         <link href="/css/styles.css" rel="stylesheet"/>  
@@ -29,5 +29,5 @@
 
             <div id="main">
                 <h1><a href="/"><img alt="SkwarePon" src="images/ponwhite.png"/></a></h1>
-          
+            
 
