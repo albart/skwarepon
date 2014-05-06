@@ -7,15 +7,15 @@ sudo gedit /etc/hosts
 
 add 127.0.0.1 skwarepon to end
 
-mkdir ~/vhosts/skwarepon
+mkdir /home/jharvard/vhosts/skwarepon
 
-cd ~/Dropbox
+cd /home/jharvard/Dropbox
 
-ln -s ~/vhosts/skwarepon
+ln -s /home/jharvard/vhosts/skwarepon
 
-chmod 711 ~/vhosts/skwarepon
+chmod 711 /home/jharvard/vhosts/skwarepon
 
-cd ~/vhosts/skwarepon
+cd /home/jharvard/vhosts/skwarepon
 
 git config --global user.email "albart-at-sbcglobal.net"
 
