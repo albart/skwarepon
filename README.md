@@ -3,10 +3,6 @@ skwarepon
 
 INITIAL SETUP
 
-sudo gedit /etc/hosts
-
-add 127.0.0.1 skwarepon to end
-
 mkdir /home/jharvard/vhosts/skwarepon
 
 cd /home/jharvard/Dropbox
