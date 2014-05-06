@@ -55,6 +55,8 @@ find /home/jharvard/vhosts/skwarepon/ -type d | xargs chmod 711
 
 mysql -u jharvard -p skwarepon < /home/users/jharvard/vhosts/skwarepon/skwarepon.sql
 
+verify git status has nothing to do
+
 SYNCHRONIZE TO GITHUB
 
 mysqldump -u jharvard -p skwarepon > /home/users/jharvard/vhosts/skwarepon/skwarepon.sql
