@@ -13,7 +13,7 @@ git init /home/jharvard/vhosts/skwarepon
 
 git remote add origin https://github.com/albart/skwarepon.git
 
-sudo gedit /etc/httpd/conf.d/phpMyAdmin.conf
+sudo gedit /etc/httpd/conf.d/phpMyAdmin.conf &
 
 under <Directory /usr/share/phpMyAdmin/>
 
@@ -21,7 +21,7 @@ add Require all granted
 
 sudo apachectl restart
 
-su gedit /etc/my.cnf
+su gedit /etc/my.cnf &
 
 add log=/home/jharvard/logs/mysqld/localhost.log
 
@@ -31,7 +31,7 @@ sudo /usr/bin/mysqld_safe &
 
 FIX AFTER update50
 
-sudo gedit /etc/httpd/conf.d/appliance50.conf
+sudo gedit /etc/httpd/conf.d/appliance50.conf &
 
 add to end:
 Listen 8080
@@ -39,9 +39,13 @@ Listen 8080
     VirtualDocumentRoot /home/jharvard/vhosts/skwarepon/public
 </VirtualHost>
 
-sudo gedit /etc/sysconfig/network-scripts/ifcfg-eth2
+sudo apachectl restart
+
+sudo gedit /etc/sysconfig/network-scripts/ifcfg-eth2 &
 
 change ONBOOT=no to ONBOOT=yes
+
+restart networking
 
 SYNCHRONIZE FROM GITHUB
 
@@ -53,13 +57,11 @@ find /home/jharvard/vhosts/skwarepon/ -name *.php -type f | xargs chmod 600
 
 find /home/jharvard/vhosts/skwarepon/ -type d | xargs chmod 711
 
-mysql -u jharvard -p skwarepon < /home/users/jharvard/vhosts/skwarepon/skwarepon.sql
-
-verify git status has nothing to do
+mysql -p skwarepon < /home/users/jharvard/vhosts/skwarepon/skwarepon.sql
 
 SYNCHRONIZE TO GITHUB
 
-mysqldump -u jharvard -p skwarepon > /home/users/jharvard/vhosts/skwarepon/skwarepon.sql
+mysqldump -p skwarepon > /home/users/jharvard/vhosts/skwarepon/skwarepon.sql
 
 find /home/jharvard/vhosts/skwarepon/ -type f | xargs chmod 644
 
@@ -70,5 +72,7 @@ find /home/jharvard/vhosts/skwarepon/ -type d | xargs chmod 711
 git add *      //for adding a new file - make sure permission are correct (644)
 
 git commit -m "message"
+
+verify git status has nothing to do
 
 git push origin master
