@@ -28,6 +28,7 @@
         <div class="main-container">
 
             <div id="main", color=#ffffff>
-                <h1><a href="/"><img alt="SkwarePon" src="/images/ponwhite.png"/></a></h1>
-            
+                <h1><a href="/"><img alt="SkwarePon" src="/images/pon.png"/></a></h1>
+                
+                <h2>Sign in</h2>            
 
