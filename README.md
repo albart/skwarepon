@@ -51,7 +51,11 @@ SYNCHRONIZE FROM GITHUB
 
 git pull origin master
 
-find /home/jharvard/vhosts/skwarepon/ -type f | xargs chmod 644
+find /home/jharvard/vhosts/skwarepon/includes -type f | xargs chmod 644
+
+find /home/jharvard/vhosts/skwarepon/public -type f | xargs chmod 644
+
+find /home/jharvard/vhosts/skwarepon/templates -type f | xargs chmod 644
 
 find /home/jharvard/vhosts/skwarepon/ -name *.php -type f | xargs chmod 600
 
