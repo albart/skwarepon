@@ -23,11 +23,11 @@
 
     </head>
 
-    <body>
+    <body background-color:#222222>
 
         <div class="main-container">
 
-            <div id="main">
-                <h1><a href="/"><img alt="SkwarePon" src="images/ponwhite.png"/></a></h1>
+            <div id="main", color=#ffffff>
+                <h1><a href="/"><img alt="SkwarePon" src="/images/ponwhite.png"/></a></h1>
             
 
