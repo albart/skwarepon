@@ -63,15 +63,17 @@ SYNCHRONIZE TO GITHUB
 
 mysqldump -p skwarepon > /home/users/jharvard/vhosts/skwarepon/skwarepon.sql
 
-find /home/jharvard/vhosts/skwarepon/ -type f | xargs chmod 644
+find /home/jharvard/vhosts/skwarepon/includes -type f | xargs chmod 644
+
+find /home/jharvard/vhosts/skwarepon/public -type f | xargs chmod 644
+
+find /home/jharvard/vhosts/skwarepon/templates -type f | xargs chmod 644
 
 find /home/jharvard/vhosts/skwarepon/ -name *.php -type f | xargs chmod 600
 
 find /home/jharvard/vhosts/skwarepon/ -type d | xargs chmod 711
 
-git add *      //for adding a new file - make sure permission are correct (644)
-
-git commit -m "message"
+git commit -a      //for adding a new file - make sure permission are correct (644)
 
 verify git status has nothing to do
 
