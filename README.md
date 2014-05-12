@@ -7,6 +7,10 @@ mkdir /home/jharvard/vhosts/skwarepon
 
 ln -s /home/jharvard/vhosts/skwarepon /home/jharvard/Dropbox/
 
+sudo gedit /etc/hosts
+
+add to bottom 127.0.0.1 skwarepon
+
 git config --global user.email "albart-at-sbcglobal.net"
 
 git init /home/jharvard/vhosts/skwarepon
