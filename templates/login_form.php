@@ -4,11 +4,11 @@
     
         <fieldset>
             <label for="login">UserName :</label>
-            <input autofocus class="form-control" type="text" name="username"/><br/>
+            <input autofocus class="text-input" type="text" name="username"/><br/>
         </fieldset>
         <fieldset>
             <label for="login">Password :</label>
-            <input type="password" name="password"/><br/>
+            <input class="text-input" type="password" name="password"/><br/>
         </fieldset>
         <input class="button" type="submit" name="type" value="Sign In" tabindex="3">
         <label for="login">
@@ -19,7 +19,7 @@
 </div>
         
 
-<div id="old-school" style="text-align:right" ! important>
+<div id="sign-connections" style="text-align:center" ! important>
     <form action="register_customer.php" method="get">
         
         <fieldset>
