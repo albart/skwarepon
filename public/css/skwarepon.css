@@ -40,7 +40,7 @@ a:hover{color:#aaa}
 
 #main{
 	margin:0 auto;
-	width:500px;
+	width:800px;
 	padding:60px 0}
 
 h1 a{
@@ -139,34 +139,6 @@ div.sign-connections p{
 	text-align:left
 }
 
-a.auth-twitter,.auth-twitter{
-	float:left;
-	margin:0 0 15px 0;
-	padding:10px 12px 10px 37px;
-	font-size:1.8em;
-	font-weight:normal;
-	text-decoration:none;
-	color:rgba(255,255,255,0.9);
-	border:none;
-	background:url(/assets/signin/icon-twitter-bird-2x-0d1399d9937c57160f22b0579f1f49ee.png) 
-	no-repeat 10px 50%,url(/assets/glass-light-f20568e0c371c96799e8f814fc27ff37.png) 
-	repeat-x 0 50%;
-	background-size:20px 16px, auto auto;
-	background-color:#1d88b4;
-	-webkit-border-radius:6px;
-	-moz-border-radius:6px;
-	border-radius:6px;
-	-webkit-transition:all .2s ease;
-	-moz-transition:all .2s ease;-o-transition:all .2s ease;transition:all .2s ease}
-
-a.auth-twitter:hover,.auth-twitter:hover{
-	color:#fff;
-	background-color:#197ea7
-}
-
-a.auth-twitter:active,.auth-twitter:active{
-	background-color:#15739a
-}
 
 div.sign-connections-full a.alt-link{
 	float:left;
@@ -193,12 +165,14 @@ p.sign-notamember{
 
 #form-oldschool{
 	float:left;
-	width:250px;
-	margin:20px 0 0 0;
-	border-right:1px solid rgba(255,255,255,0.1)
+	text-align:center;
+
+	width:50%;
+	margin:30px 0 0 0;
+	border-right:1px solid rgba(255,255,255,0.1) 
 }
 
-form fieldset{margin:0 0 15px0}
+form fieldset{margin:0 0 15px0; border:0;}
 
 label{
 	display:block;
@@ -222,7 +196,6 @@ input.text-input{
 }
 
 input.button{
-	display:block;
 	font:normal 1.6em "Helvetica Neue", helvetica, sans-serif;
 	background:#5555ff;
 	-webkit-border-radius:6px;
@@ -231,7 +204,9 @@ input.button{
 	border:none;
 	padding:8px 10px;
 	color:#fff;
-	cursor:pointer
+	cursor:pointer;
+	text-align:center;
+
 }
 
 input.button:hover,input.button:focus{
@@ -249,7 +224,7 @@ label a:link, label a:visited{
 	font-size:.9em;
 	line-height:1;
 	font-weight:normal;
-	text-decoration:underline
+	text-decoration:underline;
 }
 
 .check{
@@ -264,7 +239,7 @@ label a:link, label a:visited{
 p{
 	margin:1.5em 0 0 0;
 	font-size:1.5em;
-	line-height:1.5
+	line-height:1.5;
 }
 
 p.message{margin:2px 0 0 0}
@@ -364,15 +339,6 @@ div.success{background-color:#83b452}
 		padding:15px 0;
 		margin:15px 0 0;
 		width:100%
-	}
-
-	a.auth-twitter,.auth-twitter{
-		margin:10px 0 5px;
-		width:100%;
-		box-sizing:border-box;
-		padding:15px 0 15px 0;
-		font-size:1.6em;
-		text-align:center
 	}
 
 	div.form-inline form fieldset,div.form-inline form input.button{display:block}
